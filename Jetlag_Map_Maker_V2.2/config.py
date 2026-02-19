@@ -24,10 +24,18 @@ DEFAULT_MAP_ZOOM = 10
 
 # ----------------- OSM / DATA -----------------
 overpass_mirrors = [
+     # Primary, reliable when not overloaded
     "https://overpass-api.de/api/interpreter",
     "https://lz4.overpass-api.de/api/interpreter",
-    "https://overpass.openstreetmap.ru/api/interpreter",
-    "https://overpass.kumi.systems/api/interpreter"
+
+    # Often succeeds when .de is overloaded
+    "https://overpass.kumi.systems/api/interpreter",
+
+    # Good fallback, frequently underused
+    "https://overpass.private.coffee/api/interpreter",
+
+    # Asia-based mirror, surprisingly reliable for big queries
+    "https://overpass.nchc.org.tw/api/interpreter",
 ]
 
 # Shared runtime state (kept simple for now)
@@ -41,3 +49,5 @@ all_data = {
 }
 
 dedup_valid = False
+last_export_path = None
+saved_bound_box = None
