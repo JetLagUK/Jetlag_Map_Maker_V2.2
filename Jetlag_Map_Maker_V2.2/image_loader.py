@@ -2,7 +2,7 @@ from pathlib import Path
 from typing import Optional, Tuple, Dict
 from PIL import Image, ImageTk
 
-# Base assets directory (…/your_project/assets)
+# Base assets directory (.../your_project/assets)
 ASSETS_DIR = Path(__file__).parent / "assets"
 
 # Cache to avoid reloading + prevent Tkinter PhotoImage GC issues
